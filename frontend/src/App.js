@@ -1,16 +1,18 @@
 import './App.scss';
-import { About, Footer, Header, NavBar, Skills, Testimonials, Work, FixedLayout } from './components';
+import { About, Footer, Preview, Header, Skills, Testimonials, Work, FixedLayout } from './components';
 
 function App() {
   return (
     <>
       <div className="app">
-        <NavBar />
         <Header />
-        <About />
-        <Work/>
-        <Skills/>
-        <Testimonials/>
+        <main>
+          <Preview />
+          <About />
+          <Work/>
+          <Skills/>
+          <Testimonials/>
+        </main>
         <Footer/>
       </div>
       <FixedLayout />

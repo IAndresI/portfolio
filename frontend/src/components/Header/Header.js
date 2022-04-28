@@ -1,71 +1,68 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
+import {HiMenuAlt4, HiX} from 'react-icons/hi';
+import {motion} from 'framer-motion'
 
-import { images } from '../../constants';
 import './Header.scss';
+import {images} from '../../constants'
 
 const Header = () => {
 
-  const scaleVariants = {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 1,
-      ease: "easeInOut"
-    }
-  }
+  const [toggle, setToggle] = useState(false)
 
   return (
-    <div id="home" className="app__container app__header app__flex">
-      <motion.div
-        whileInView={{x: [-100, 0], opacity: [0, 1]}}
-        transition={{duration: 1.5}}
-        className="app__header-info"
-      >
-        <div className="app__header-badge">
-          <div className="badge-cmp app-flex">
-            <span>👋</span>
-            <div style={{ marginLeft: 20}}>
-              <p className="p-text">Hello, I am</p>
-              <h1 className="head-text">Dreymandinn</h1>
-            </div>
-          </div>
-
-          <div className="tag-cmp app__flex">
-            <p className="p-text">Web Developer</p>
-            <p className="p-text">Freelancer</p>
-          </div>
+    <header>
+      <nav className="app__navbar">
+        <div className="app_navbar-logo">
+          <img src={images.logo} alt="logo" />
         </div>
-      </motion.div>
-      <motion.div
-        whileInView={{opacity: [0, 1]}}
-        transition={{duration: 1.5, delayChildren:1.5}}
-        className="app__header-img"
-      >
-        <img src={images.profile} alt="profile_bg" />
-        <motion.img
-          whileInView={{scale: [0, 1]}}
-          transition={{duration: 2, ease: "easeInOut"}}
-          src={images.circle}
-          alt="profile_circle"
-          className="overlay_circle"
-        />
-      </motion.div>
+        <ul className="app__navbar-links">
+          {
+            ['home', 'about', 'contact', 'work', 'skills'].map((item) => {
+              return(
+                <li className="app__flex p-text" key={item}>
+                  <div />
+                  <a href={`#${item}`}>{item}</a>
+                </li>
+              )
+            })
+          }
+        </ul>
 
-      <motion.div
-        variants={scaleVariants}
-        whileInView={scaleVariants.whileInView}
-        className="app__header-circles"
-      >
-        {
-          [images.flutter, images.redux, images.sass].map((item) => (
-            <div className="circle-cmp app__flex" key={item}>
-              <img src={item} alt="circle"/>
-            </div>
-          ))
-        }
-      </motion.div>
-    </div>
+        <div className="app__navbar-menu">
+          <HiMenuAlt4 onClick={() => setToggle(true)} />
+          {
+            toggle && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  visible: { opacity: 1 },
+                  hidden: { opacity: 0 },
+                }}
+              >
+                <HiX onClick={() => setToggle(false)}/>
+                <ul className="app__navbar-links">
+                  {
+                    ['home', 'about', 'contact', 'work', 'skills'].map((item) => {
+                      return(
+                        <li key={item}>
+                          <a 
+                            href={`#${item}`}
+                            onClick={() => setToggle(false)}
+                          >
+                            {item}
+                          </a>
+                        </li>
+                      )
+                    })
+                  }
+                </ul>
+              </motion.div>
+            )
+          }
+        </div>
+      </nav>
+    </header>
   );
 };
 
