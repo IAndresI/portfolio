@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import {urlFor, client} from '../../client';
 
 import './Work.scss';
+import withSectionAnimation from '../../hoc/withSectionAnimation';
 
 const Work = () => {
 
@@ -32,7 +33,7 @@ const Work = () => {
   
 
   return (
-    <section id="work" className="app__container">
+    <>
       <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
       <div className="app__works-filter">
         {
@@ -44,7 +45,8 @@ const Work = () => {
             >
               {item}
             </div>
-          ) )
+          )
+          )
         }
       </div>
       <motion.div
@@ -102,8 +104,8 @@ const Work = () => {
           ))
         }
       </motion.div>
-    </section>
+    </>
   );
 };
 
-export default Work;
+export default withSectionAnimation(Work, 'work');

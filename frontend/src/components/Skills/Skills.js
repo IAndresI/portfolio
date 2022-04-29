@@ -5,6 +5,7 @@ import {urlFor, client} from '../../client';
 import ReactTooltip from 'react-tooltip';
 
 import './Skills.scss';
+import withSectionAnimation from '../../hoc/withSectionAnimation';
 
 const Skills = () => {
 
@@ -32,7 +33,7 @@ const Skills = () => {
           className="app__skills-list"
         >
           {
-            skills?.map(skill => (
+            skills?.map((skill) => (
               <motion.div
                 whileInView={{opacity: [0, 1]}}
                 transition={{duration: 0.5}}
@@ -51,7 +52,7 @@ const Skills = () => {
           className="app__skills-exp"
         >
           {
-            expiriences?.map(expirience => (
+            expiriences?.map((expirience) => (
               <motion.div
                 whileInView={{opacity: [0, 1]}}
                 transition={{duration: 0.5}}
@@ -63,30 +64,26 @@ const Skills = () => {
                 >
                   <p className="bold-text">{expirience.year}</p>
                 </div>
-                <motion.div className="app__skills-exp-work">
+                <motion.div className="app__skills-exp-works">
                   {
-                    expirience?.works?.map(work => (
-                      <>
-                       <motion.div
+                    expirience?.works?.map((work) => (
+                      <div
+                        key={work.name}
+                      >
+                        <motion.div
                           whileInView={{opacity: [0, 1]}}
                           transition={{duration: 0.5}}
                           className="app__skills-exp-work"
-                          data-tip
-                          data-for={work.name}
-                          key={work.name}
                         >
                           <h4 className="bold-text">{work.name}</h4>
                           <p className="p-text">{work.company}</p>
                         </motion.div>
-                        <ReactTooltip
-                          id={work.name}
-                          effect="solid"
-                          arrowColor='#fff'
+                        <div
                           className='skills-tooltip'
                         >
                           {work.desc}
-                        </ReactTooltip>
-                      </>
+                        </div>
+                      </div>
                      )
                     )
                   }
@@ -100,4 +97,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default withSectionAnimation(Skills, 'skills', 'app__whitebg');

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './About.scss';
+import withSectionAnimation from '../../hoc/withSectionAnimation';
 
-import { images } from '../../constants';
 import { client, urlFor } from '../../client';
 
 const About = () => {
@@ -17,7 +17,7 @@ const About = () => {
 
 
   return (
-    <section id="about" className="app__container">
+    <>
       <h2 className="head-text">
         I Know That <span>Good Dev</span> <br /> Means <span>Good Buisness</span>
       </h2>
@@ -38,8 +38,8 @@ const About = () => {
           ))
         }
       </div>
-    </section>
+    </>
   );
 };
 
-export default About;
+export default withSectionAnimation(About, 'about', 'about app__whitebg');

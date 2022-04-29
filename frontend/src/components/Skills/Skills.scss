@@ -39,12 +39,14 @@
   text-align: center;
 
   margin: 1rem;
-  transition: all 0.3s ease-in-out;
+  
+  
   div {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: var(--primary-color);
+    transition: all 0.5s ease-in-out;
 
     img {
       width: 50%;
@@ -52,7 +54,7 @@
     }
 
     &:hover {
-      box-shadow: 0 0 25px #fef4f5;
+      box-shadow: 0 0 25px #858182;
     }
 
     @media screen and (min-width: 2000px) {
@@ -99,6 +101,22 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin: 1rem 0;
+
+  @media screen and (max-width: 900px){
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    p:nth-child(1) {
+      font-size: 3rem;
+    }
+
+    h4 {
+      font-size: 2rem;
+      text-align: center;
+      width: 100%;
+    }
+  }
 }
 
 .app__skills-exp-works {
@@ -109,8 +127,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 1rem;
-    cursor: pointer;
+    margin-bottom: 0.5rem;
 
     h4 {
       font-weight: 500;
@@ -135,22 +152,20 @@
   @media screen and (max-width: 450px){
     margin-right: 1rem;
   }
+
+  @media screen and (max-width: 900px){
+    margin-right: 0;
+  }
 }
 
 .skills-tooltip {
-  max-width: 300px !important;
-  background-color: var(--white-color) !important;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 5px !important;
-  padding: 1rem !important;
-  color: var(--gray-color) !important;
-  text-align: center !important;
-  line-height: 1.5 !important;
-  opacity: 1 !important;
+  max-width: 300px;
+  color: var(--gray-color);
+  line-height: 1.5;
 
   @media screen and (min-width: 2000px) {
-    font-size: 1.75rem !important;
-    max-width: 500px !important;
-    line-height: 2 !important;
+    font-size: 1.75rem;
+    max-width: 500px;
+    line-height: 2;
   }
 }
