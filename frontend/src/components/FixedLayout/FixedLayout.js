@@ -12,7 +12,7 @@ export default function FixedLayout() {
     <>
       <div className="app__navigation">
         {
-          ['home', 'about', 'contact', 'work', 'skills', 'testimonials'].map((item, index) => {
+          ['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((item, index) => {
             return(
               <a 
                 href={`#${item}`}

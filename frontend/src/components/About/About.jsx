@@ -17,7 +17,7 @@ const About = () => {
 
 
   return (
-    <div id="about" className="app__container">
+    <section id="about" className="app__container">
       <h2 className="head-text">
         I Know That <span>Good Dev</span> <br /> Means <span>Good Buisness</span>
       </h2>
@@ -38,7 +38,7 @@ const About = () => {
           ))
         }
       </div>
-    </div>
+    </section>
   );
 };
 

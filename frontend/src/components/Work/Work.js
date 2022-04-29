@@ -32,7 +32,7 @@ const Work = () => {
   
 
   return (
-    <>
+    <section id="work" className="app__container">
       <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
       <div className="app__works-filter">
         {
@@ -102,7 +102,7 @@ const Work = () => {
           ))
         }
       </motion.div>
-    </>
+    </section>
   );
 };
 
