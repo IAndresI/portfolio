@@ -42,7 +42,7 @@ const Preview = () => {
         transition={{duration: 1.5, delayChildren:1.5}}
         className="app__header-img"
       >
-        <img src={images.profile} alt="profile_bg" />
+        <img src={images.profile} alt="profile_bg"/>
         <motion.img
           whileInView={{scale: [0, 1]}}
           transition={{duration: 2, ease: "easeInOut"}}
@@ -58,7 +58,7 @@ const Preview = () => {
         className="app__header-circles"
       >
         {
-          [images.flutter, images.redux, images.sass].map((item) => (
+          [images.node, images.react, images.mu5, images.posgresql, images.redux].map((item) => (
             <div className="circle-cmp app__flex" key={item}>
               <img src={item} alt="circle"/>
             </div>

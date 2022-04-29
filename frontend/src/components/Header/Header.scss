@@ -14,17 +14,20 @@
 
 .app__navbar-logo {
   display: flex;
+  font-family: var(--font-logo);
+  font-size: 2rem;
   justify-content: flex-start;
   align-items: center;
+  display: block;
+  text-decoration: none;
+  color: var(--black-color);
   
-  img {
-    width: 90px;
-    height: 20px;
+  span {
+    color: var(--secondary-color);
+  }
 
-    @media screen and (min-width: 2000px) {
-      width: 180px;
-      height: 40px;
-    }
+  @media screen and (max-width: 450px) {
+    font-size: 1.4rem;
   }
 }
 

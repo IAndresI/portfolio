@@ -12,9 +12,9 @@ const Header = () => {
   return (
     <header>
       <nav className="app__navbar">
-        <div className="app_navbar-logo">
-          <img src={images.logo} alt="logo" />
-        </div>
+        <a href="#home" className="app__navbar-logo">
+          Dreyman<span>dinn</span>
+        </a>
         <ul className="app__navbar-links">
           {
             ['home', 'about', 'contact', 'work', 'skills'].map((item) => {

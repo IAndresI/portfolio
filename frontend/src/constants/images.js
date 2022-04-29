@@ -13,6 +13,7 @@ import mu5 from '../assets/mu5.png';
 import node from '../assets/node.png';
 import python from '../assets/python.png';
 import react from '../assets/react.png';
+import posgresql from '../assets/postgresql.png';
 import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
@@ -34,8 +35,11 @@ import bolt from '../assets/bolt.png';
 import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
+import myLogo from '../assets/myLogo.png';
 
 export default {
+  myLogo,
+  posgresql,
   email,
   mobile,
   api,
