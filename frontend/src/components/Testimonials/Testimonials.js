@@ -62,7 +62,7 @@ const Testimonials = () => {
                   </div>
                 </div>
 
-              <div className="app__testimonials-brands app__flex">
+              {/* <div className="app__testimonials-brands app__flex">
                 {
                   brands.map(brand => (
                     <motion.div
@@ -74,7 +74,7 @@ const Testimonials = () => {
                     </motion.div>
                   ))
                 }
-              </div>
+              </div> */}
             </>
           )
         :

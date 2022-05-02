@@ -11,6 +11,11 @@
   background-color: var(--primary-color);
 }
 
+.app__inner {
+  min-height: 100vh;
+  padding: 100px 0;
+}
+
 .app__container {
   width: 100%;
   min-height: 100vh;
@@ -20,7 +25,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 0;
 
   &:before {
     content: "";
@@ -44,12 +48,6 @@
     height: 100px;
     background: linear-gradient(to bottom,transparent,var(--white-color));
     z-index: 2;
-  }
-
-  &:nth-child(1) {
-    &:before {
-      display: none;
-    }
   }
 }
 
