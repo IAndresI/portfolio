@@ -27,6 +27,8 @@ import about04 from '../assets/about04.png';
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
+import me from '../assets/me.png';
+import meSecond from '../assets/meSecond.png';
 
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
@@ -38,6 +40,8 @@ import spotify from '../assets/spotify.png';
 import myLogo from '../assets/myLogo.png';
 
 export default {
+  meSecond,
+  me,
   myLogo,
   posgresql,
   email,

@@ -5,7 +5,7 @@
 }
 
 .app__testimonial-item {
-  width: 60%;
+  width: 100%;
   min-height: 320px;
   background-color: var(--white-color);
   display: flex;
@@ -150,5 +150,23 @@
 
   @media screen and (max-width: 800px) {
     width: 100%;
+  }
+}
+
+.app__testimonials-inner {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+
+  div {
+    width: 100%;
+
+    .app__testimonial-item {
+      width: 60%;
+    }
   }
 }
